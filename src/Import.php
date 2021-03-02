@@ -67,7 +67,7 @@ class Import
 
 		$body = $response->getBody();
 		// if zip, extract it and retrieve contents
-		if (in_array($response->getHeaderLine('Content-Type'), ['application/zip', 'application/x-zip;charset=utf-8'])) {
+		if (in_array($response->getHeaderLine('Content-Type'), ['application/zip', 'application/x-zip;charset=utf-8', 'application/x-zip;charset=UTF-8'])) {
 			$tmpFile = tmpfile();
 			fwrite($tmpFile, $body->getContents());
 
